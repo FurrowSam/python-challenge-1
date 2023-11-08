@@ -1,46 +1,72 @@
-menu_items = [
+menu_items = [    
   {
-    "Item name": "Tonkotsu ramen",
+    "Item name": 'Tonkotsu ramen',
+    "Price": float(19.99),
+    "Quantity": int(1)
+  },
+  {
+    "Item name": 'Hunan Chicken',
+    "Price": float(17.99),
+    "Quantity": int(1)
+  },
+  {
+    "Item name": 'Pork Buns',
     "Price": float(9.99),
+    "Quantity": int(3)
+  },
+  {
+    "Item name": 'Spicy Tuna Roll',
+    "Price": float(12.99),
     "Quantity": int(1)
   },
   {
-    "Item name": "Hunan Chicken",
-    "Price": float(8.99),
-    "Quantity": int(1)
-  },
-  {
-    "Item name": "Pork Buns",
-    "Price": float(5.99),
-    "Quantity": int(1)
-  },
-  {
-    "Item name": "Spicy Tuna Roll",
-    "Price": float(7.99),
-    "Quantity": int(1)
+    "Item name": 'Blistered Shishito Peppers',
+    "Price": float(12.99),
+      "Quantity": int(1)
   }
 ]
 
-print("Welcome to Chef Sam's Food Truck!")
+menu_dashes = "-" * 33
 
-print("Here is our menu:")
-for item in menu_items:
-    print(f"{item['Item name']} - ${item['Price']}")
+print(menu_dashes)
+print("Welcome to Chef Sam's Food Truck!")
+print(menu_dashes)
+
+
 
 while True:
-    menu_selection = input("Which item would you like to order? (Enter the item name or 'done' to finish): ")
     
-    if menu_selection.lower() == 'done':
-        break
-    
-    found = False
-    for item in menu_items:
-        if menu_selection.lower() == item['Item name'].lower():
-            quantity = int(input(f"How many {item['Item name']} would you like to order? "))
-            item['Quantity'] += quantity
-            found = True
-            break
-    
-    if not found:
-        print("Item not found in the menu. Please try again.")
+    print(menu_dashes)
+    print("Please select from our menu below")
+    print(menu_dashes)
 
+    i = 1
+    menu_selection = { }
+
+
+    for item in menu_items:
+        for value in item.items():
+         print(f"{value}")
+        
+
+
+        menu_selection[i] = value
+        i += 1
+    
+    # menu_selection = input("Please select your items or Q to Quit.")
+
+
+
+    # if menu_selection == 'Q':
+    #     break
+    # elif menu_selection.isdigit():
+    #     if int(menu_selection) in menu_items.keys():
+            
+    #         menu_selection = menu_items[int(menu_selection)]
+
+    #         print(menu_dashes)
+    #         print(f"You have selected {menu_selection}")
+
+
+  
+             
